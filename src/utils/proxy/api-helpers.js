@@ -3,9 +3,6 @@ export function formatApiCall(url, args) {
   const replace = (match) => {
     const key = match.replace(/\{|\}/g, "");
     let value = args[key];
-    if (key === "url") {
-      value = value.replace(/\/+$/, ""); // remove trailing slashes
-    }
     return value || "";
   };
 
